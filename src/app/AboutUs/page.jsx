@@ -435,20 +435,20 @@ const AboutUs = () => {
               {/* right side small dev askquestionimg `url(${imagePath})` */}
               <div className="col-span-12 lg:col-span-3">
               
-                <div className=" w-auto  border border-gray-200 rounded-lg bg-cover bg-center shadow  " style={{ backgroundImage: `url('../../../public/assets/AboutUs/Group33745.png')` }}>
+                <div className=" w-auto  border border-gray-200 rounded-lg bg-cover bg-center shadow  "  style={{ backgroundImage: `url('/assets/AboutUs/Group33745.png')` }}>
                   <div className="p-3  py-16">
                     <div className="text-center  w-full">
-                      <h1 className="title-font text-black text-[28px]  title-font font-me  mb-4">
+                      <h1 className="title-font text-white text-[28px]  title-font font-me  mb-4">
                         Any Question
                       </h1>
-                      <p className="  mx-auto  font-normal   mb-4 text-back ">
+                      <p className="  mx-auto text-white   font-normal   mb-4 text-back ">
                         Do you have questions? We have answers. Check the most frequently asked questions regarding Kick-Ass Seniors
                       </p>
                     </div>
 
                     <div className="flex justify-center ">
                       <a href="#"
-                        className=" bg-[#2c6777] text-black no-underline hover:bg-[#4e84d4] mt-2  px-9 py-2 rounded-md    text-[16px] font-[500]"
+                        className=" bg-[#2c6777] text-white no-underline  mt-2  px-9 py-2 rounded-md    text-[16px] font-[500]"
                       >Ask Question</a>
 
 

@@ -1,8 +1,10 @@
+'use client'
 import Link from "next/link";
 
 import signinimg from "../../../public/assets/images/signin/signin-side-img.png";
 import logoimg from "../../../public/assets/images/navbar/main-logo.png";
 import Image from "next/image";
+import ParticleBackground from "./ParticleComponent/ParticleComponent";
 
 
 
@@ -16,11 +18,11 @@ const SignIn = () => {
           <section className="min-h-screen flex items-stretch text-black ">
         
               <div
-                  className="lg:flex z-10  w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center text-white"
-                   style={{ backgroundImage: `url(${signinimg})` }}
+                  className="lg:flex   w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center text-white"
+                  style={{ backgroundImage: `url('/assets/images/signin/signin-side-img.png')` }}
                 
               >
-                       {/* <ParticleBackground/> */}
+                       <ParticleBackground/>
                   <div className="absolute bg-black opacity-20  inset-0 z-0"></div>
                   <div className="w-full xl:px-24 md:px-8 z-10">
                       <h1 className="xl:text-5xl lg:text-4xl font-bold text-left tracking-wide">
@@ -33,7 +35,7 @@ const SignIn = () => {
                   </div>
               </div>
           
-              <div className="lg:w-1/2 w-full flex items-center justify-center text-center xl:px-16 md:px-6 px-0 z-0 bg-[#f5f4ef]">
+              <div className="lg:w-1/2 w-full flex items-center justify-center text-center xl:px-16 md:px-6 px-0 z-0 bg-white">
                   {/* <div className="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center" style={{ backgroundImage: `url(${signinimg})` }}>
                       <div className="absolute bg-black opacity-60 inset-0 z-0 line18 z-0"></div>
                   </div> */}
