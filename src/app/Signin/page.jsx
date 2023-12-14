@@ -110,7 +110,7 @@ const SignIn = () => {
                                   LOG IN
                               </button>
                           </div>
-                          <p className=" mt-2 mb-2">Dont have an account yet? <Link href="/sign_in" className="text-[#2C6777] font-medium">Sign in</Link> </p>
+                          <p className=" mt-2 mb-2">Dont have an account yet? <Link href="/SignUp" className="text-[#2C6777] font-medium">Sign up</Link> </p>
                       
                           {/* <p className=" mt-2 mb-2"> Dont have an account yet?
                           <Link to="/sign_in" className="text-[#2C6777] font-medium">Sign in</Link>
