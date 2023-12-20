@@ -9,12 +9,19 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import ProfileDetailsForm from '../AllForm/RegisterTutor/ProfileDetailsFrom/page';
-import SubjectsExperienceForm from '../AllForm/RegisterTutor/SubjectsExperienceForm/page';
-import PublicProfileForm from '../AllForm/RegisterTutor/PublicProfileForm/page';
-import RateAvailabilityForm from '../AllForm/RegisterTutor/RateAvailabilityForm/page';
-import ConfirmationForm from '../AllForm/RegisterTutor/ConfirmationForm/page';
-import Navbar from '../Components/ShareAbleComponent/Navbar/Navbar';
+
+
+
+
+import ProfileDetailsForm from '../../AllForm/RegisterTutor/ProfileDetailsFrom/page';
+import SubjectsExperienceForm from '../../AllForm/RegisterTutor/SubjectsExperienceForm/page';
+import PublicProfileForm from '../../AllForm/RegisterTutor/PublicProfileForm/page';
+import RateAvailabilityForm from '../../AllForm/RegisterTutor/RateAvailabilityForm/page';
+import ConfirmationForm from '../../AllForm/RegisterTutor/ConfirmationForm/page';
+import Navbar from '../../Components/ShareAbleComponent/Navbar/Navbar';
+import SharedStepperLogic from '../../Components/ShareAbleComponent/RegistrationSteperFromMainLogic/SharedStepperLogic';
+
+
 
 
 
@@ -96,6 +103,7 @@ export default function HorizontalLinearStepper() {
             return <ConfirmationForm handleNext={handleNext} handleBack={handleBack} activeStep={activeStep} isStepOptional={isStepOptional} handleSkip={handleSkip} steps={steps} />;
       default:
         return 'Unknown step';
+       
     }
   };
 
@@ -110,78 +118,20 @@ export default function HorizontalLinearStepper() {
       >
         <Navbar className="relative " />
       </div>
-    <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={activeStep}  alternativeLabel  >
-        {steps.map((label, index) => {
-          const stepProps = {};
-          const labelProps = {};
-          if (isStepOptional(index)) {
-            labelProps.optional = (
-              <Typography variant="caption">
-
-                {/* <ProfileDetailsForm/> */}
-              </Typography>
-              
-            );
-          }
-          if (isStepSkipped(index)) {
-            stepProps.completed = false;
-          }
-          return (
-            <Step key={label} {...stepProps}>
-              <StepLabel {...labelProps} >
-                <Typography variant="body2" align="center">
-                  {/* Hide labels on small devices */}
-                  <span className="hidden sm:inline">
-                    {label}
-                  </span>
-                </Typography>
-              </StepLabel>
-            </Step>
-          );
-        })}
-        
-      </Stepper>
-      {activeStep === steps.length ? (
-        <React.Fragment>
-           
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
-          </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Box sx={{ flex: '1 1 auto' }} />
-            <Button onClick={handleReset}>Reset</Button>
-          </Box>
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-          {/* <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography> */}
-         <div className='mt-10'>
-         {getStepContent(activeStep)}
-         </div>
-          {/* <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
-            <Box sx={{ flex: '1 1 auto' }} />
-            {isStepOptional(activeStep) && (
-              <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
-                Skip
-              </Button>
-            )}
-
-            <Button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-            </Button>
-          </Box> */}
-        </React.Fragment>
-      )}
-    </Box>
+      <SharedStepperLogic  activeStep={activeStep}
+      steps={steps} 
+      isStepOptional={isStepOptional}
+      isStepSkipped={isStepSkipped}
+      handleNext={handleNext}
+      handleBack={handleBack}
+      handleSkip={handleSkip}
+      handleReset={handleReset}
+      getStepContent={getStepContent}
+      
+      
+      
+      
+      />
 
 </>
   );

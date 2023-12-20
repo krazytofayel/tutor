@@ -29,7 +29,7 @@ const RateAvailabilityForm = ({ handleNext, handleBack, activeStep, isStepOption
     <div className='w-full'>
 
 
-      <form class="max-w-3xl mx-auto p-5  bg-[#f9f9fa] rounded-lg ">
+      <form className="max-w-3xl mx-auto p-5  bg-[#f9f9fa] rounded-lg border-t-4 border-t-[#089bab] border-b-4 border-b-[#089bab]  ">
         <Typography sx={{ mt: 2, mb: 1 }}><span className='text-sm font-bold text-gray-500'>Step</span>  <span className='text-sm font-bold text-gray-500'> {activeStep + 1}</span>  <span className='text-sm font-bold text-gray-500'>oF</span>  <span className='text-sm font-bold text-gray-500'> {activeStep + 1}</span> </Typography>
         <div>
 
