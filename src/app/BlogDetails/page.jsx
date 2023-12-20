@@ -51,7 +51,7 @@ const BlogDetail = () => {
                         </h1>
                         <p class="lg:w-1/2 w-full leading-relaxed text-gray-800 xl:text-2xl md:text-xl text-lg font-medium mt-3">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's{" "}
+                            been the industrys{" "}
                         </p>
                     </div>
                 </div>

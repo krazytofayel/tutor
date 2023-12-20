@@ -105,7 +105,7 @@ const TutorProfile = ({ TutorProfileProps }) => {
         </div>
         <div className="font-normal text-sm text-start border-b-2">
           <h1 className="text-start text-[#373A3F] font-bold text-2xl mt-1 mb-1">A Short Brief</h1>
-          <p className="mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, printer took a galley of type  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and Lorem </p>
+          <p className="mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, printer took a galley of type  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and Lorem </p>
         </div>
 
 
@@ -163,7 +163,7 @@ const TutorProfile = ({ TutorProfileProps }) => {
               <Accordion.Content>
                 <p className="mb-2 text-gray-500 ">
                   <span>
-                    Before you look for a tutor, it's helpful to have a really clear idea of exactly where your child needs help - whether with a specific English Literature text, one area of Maths or their exam technique - and filter your choices accordingly. If you're not sure where they need to focus, having a chat with them or their teacher can help you work out the best place to start. In a free meeting, you can then ask the tutor any questions you like and see how well they get on with your child before deciding to book.
+                    Before you look for a tutor, its helpful to have a really clear idea of exactly where your child needs help - whether with a specific English Literature text, one area of Maths or their exam technique - and filter your choices accordingly. If you are not sure where they need to focus, having a chat with them or their teacher can help you work out the best place to start. In a free meeting, you can then ask the tutor any questions you like and see how well they get on with your child before deciding to book.
                   </span>
                 </p>
                 <p className="text-gray-500 ">

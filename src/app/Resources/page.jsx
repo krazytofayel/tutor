@@ -56,7 +56,7 @@ const Resources = ()=>{
     }).filter(Boolean);
 
     console.log("Selected Subjects:", selectedSubjectsNames);
-  }, [selectedSubjects]);
+  }, [selectedSubjects,ButtonData]);
 
   const handleCheckboxChange = (id) => {
     setSelectedSubjects(prevSelected => {

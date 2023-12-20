@@ -83,7 +83,7 @@ const BecomeaTutor = () => {
                 </h1>
 
                 <p className="leading-relaxed xl:text-[20px] text-lg  text-gray-800 mb-4 lg:font-semibold md:font-semibold font-normal">
-                The benefits of tutoring with us extend beyond the classroom, as we invite educators like you to join our dynamic tutoring program. As part of our team, you'll have the opportunity to make a lasting impact on the lives of eager learners, helping them unlock their full academic potential.
+                The benefits of tutoring with us extend beyond the classroom, as we invite educators like you to join our dynamic tutoring program. As part of our team, you will have the opportunity to make a lasting impact on the lives of eager learners, helping them unlock their full academic potential.
                 </p>
               </div>
             </div>

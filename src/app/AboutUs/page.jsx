@@ -75,7 +75,7 @@ const AboutUs = () => {
                                 </h1>
 
                                 <p className="leading-relaxed xl:text-[20px] text-lg text-gray-800 mb-4 lg:font-semibold md:font-semibold font-normal">
-                                    Students and parents seek personal tutors because tutoring provides personalized support for their educational and personal development needs. We are one with educators with a mission to reduce learning difficulties and develop the Emotional Intelligence required to tailor lessons to each student's learning style.
+                                    Students and parents seek personal tutors because tutoring provides personalized support for their educational and personal development needs. We are one with educators with a mission to reduce learning difficulties and develop the Emotional Intelligence required to tailor lessons to each student learning style.
                                 </p>
                             </div>
                         </div>
@@ -95,7 +95,7 @@ const AboutUs = () => {
                                 </h1>
 
                                 <p className="leading-relaxed xl:text-[20px] text-lg text-gray-800 mb-4 lg:font-semibold md:font-semibold font-normal">
-                                    Our tutors are not just educators; they are mentors, guides, and friends who bring emotional intelligence to the forefront of the learning experience. We care about the fact that every student is unique and that's why we have the best tutors who are equipped with the ability to connect on a personal level. This can contribute in building trust and rapport to ensure that students feel comfortable during the sessions
+                                    Our tutors are not just educators; they are mentors, guides, and friends who bring emotional intelligence to the forefront of the learning experience. We care about the fact that every student is unique and that why we have the best tutors who are equipped with the ability to connect on a personal level. This can contribute in building trust and rapport to ensure that students feel comfortable during the sessions
                                 </p>
                             </div>
                         </div>
@@ -264,7 +264,7 @@ const AboutUs = () => {
                       <Accordion.Content>
                         <p className="mb-2 text-gray-500 ">
                           <span>
-                            Before you look for a tutor, it's helpful to have a really clear idea of exactly where your child needs help - whether with a specific English Literature text, one area of Maths or their exam technique - and filter your choices accordingly. If you're not sure where they need to focus, having a chat with them or their teacher can help you work out the best place to start. In a free meeting, you can then ask the tutor any questions you like and see how well they get on with your child before deciding to book.
+                            Before you look for a tutor, its helpful to have a really clear idea of exactly where your child needs help - whether with a specific English Literature text, one area of Maths or their exam technique - and filter your choices accordingly. If you are not sure where they need to focus, having a chat with them or their teacher can help you work out the best place to start. In a free meeting, you can then ask the tutor any questions you like and see how well they get on with your child before deciding to book.
                           </span>
                         </p>
                         <p className="text-gray-500 ">
