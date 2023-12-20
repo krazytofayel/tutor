@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RxCross2 } from 'react-icons/rx';
 import Navbar from '../Components/ShareAbleComponent/Navbar/Navbar';
 import Footer from '../Components/ShareAbleComponent/Footer/Footer';
@@ -8,15 +8,26 @@ import Footer from '../Components/ShareAbleComponent/Footer/Footer';
 const TutionJob=()=>{
   const [navfix, setNavfix] = useState(false);
 
-  function setFixed() {
-    if (window.scrollY >= 70) {
-      setNavfix(true);
-      //console.log(scrollY)
-    } else {
-      setNavfix(false);
+  useEffect(() => {
+    function setFixed() {
+      if (typeof window !== "undefined" && window.scrollY >= 70) {
+        setNavfix(true);
+        //console.log(scrollY)
+      } else {
+        setNavfix(false);
+      }
     }
-  }
-  window.addEventListener("scroll", setFixed);
+    
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", setFixed);
+    }
+  
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", setFixed);
+      }
+    };
+  }, []);
   const ButtonData = [
     { id: 1, buttoncontant: "+ English Medium" },
     { id: 2, buttoncontant: "+ Arabic Medium" },

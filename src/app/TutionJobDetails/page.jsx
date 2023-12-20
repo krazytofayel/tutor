@@ -3,21 +3,32 @@ import { useForm } from 'react-hook-form';
 import Badge from '../Components/ShareAbleComponent/Badge/page';
 import Footer from '../Components/ShareAbleComponent/Footer/Footer';
 import Navbar from '../Components/ShareAbleComponent/Navbar/Navbar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const TutionJobDetails = () => {
   
     const [navfix, setNavfix] = useState(false);
 
-    function setFixed() {
-      if (window.scrollY >= 70) {
-        setNavfix(true);
-        //console.log(scrollY)
-      } else {
-        setNavfix(false);
-      }
-    }
-    window.addEventListener("scroll", setFixed);
+    useEffect(() => {
+        function setFixed() {
+          if (typeof window !== "undefined" && window.scrollY >= 70) {
+            setNavfix(true);
+            //console.log(scrollY)
+          } else {
+            setNavfix(false);
+          }
+        }
+        
+        if (typeof window !== "undefined") {
+          window.addEventListener("scroll", setFixed);
+        }
+      
+        return () => {
+          if (typeof window !== "undefined") {
+            window.removeEventListener("scroll", setFixed);
+          }
+        };
+      }, []);
   
 
   const { register, handleSubmit, errors } = useForm(); // initialize the hook

@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Navbar from '../Components/ShareAbleComponent/Navbar/Navbar';
 import Footer from '../Components/ShareAbleComponent/Footer/Footer';
@@ -9,15 +9,26 @@ const RequestTutor = () => {
   
   const [navfix, setNavfix] = useState(false);
 
-  function setFixed() {
-    if (window.scrollY >= 70) {
-      setNavfix(true);
-      //console.log(scrollY)
-    } else {
-      setNavfix(false);
+  useEffect(() => {
+    function setFixed() {
+      if (typeof window !== "undefined" && window.scrollY >= 70) {
+        setNavfix(true);
+        //console.log(scrollY)
+      } else {
+        setNavfix(false);
+      }
     }
-  }
-  window.addEventListener("scroll", setFixed);
+    
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", setFixed);
+    }
+  
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", setFixed);
+      }
+    };
+  }, []);
 
 
 

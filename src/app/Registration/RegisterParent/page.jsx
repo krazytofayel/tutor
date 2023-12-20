@@ -35,19 +35,26 @@ export default function HorizontalLinearStepper() {
 
   const [navfix, setNavfix] = React.useState(false);
 
-  function setFixed() {
-    if (window.scrollY >= 70) {
-      setNavfix(true);
-      //console.log(scrollY)
-    } else {
-      setNavfix(false);
+  React.useEffect(() => {
+    function setFixed() {
+      if (typeof window !== "undefined" && window.scrollY >= 70) {
+        setNavfix(true);
+        //console.log(scrollY)
+      } else {
+        setNavfix(false);
+      }
     }
-  }
-  // if (typeof window !== 'undefined') {
-  //   window.addEventListener("scroll", setFixed);
-  // }
-
-  window.addEventListener("scroll", setFixed);
+    
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", setFixed);
+    }
+  
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", setFixed);
+      }
+    };
+  }, []);
   const isStepOptional = (step) => {
     return step === 1;
   };

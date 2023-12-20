@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import aboutsideimg from "../../../public/assets/AboutUs/about-us-side-banner.png";
 import { HiLocationMarker, HiMail, HiPhoneMissedCall } from 'react-icons/hi';
@@ -15,15 +15,26 @@ import Footer from "../Components/ShareAbleComponent/Footer/Footer";
 const BecomeaTutor = () => {
   const [navfix, setNavfix] = useState(false);
 
-  function setFixed() {
-    if (window.scrollY >= 70) {
-      setNavfix(true);
-      //console.log(scrollY)
-    } else {
-      setNavfix(false);
+  useEffect(() => {
+    function setFixed() {
+      if (typeof window !== "undefined" && window.scrollY >= 70) {
+        setNavfix(true);
+        //console.log(scrollY)
+      } else {
+        setNavfix(false);
+      }
     }
-  }
-  window.addEventListener("scroll", setFixed);
+    
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", setFixed);
+    }
+  
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", setFixed);
+      }
+    };
+  }, []);
 
  
   const { register, handleSubmit } = useForm();

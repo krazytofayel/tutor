@@ -13,7 +13,7 @@ import { BiLogoYoutube } from "react-icons/bi";
 import { BiLogoLinkedinSquare } from "react-icons/bi";
 import { BsReply } from "react-icons/bs";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Navbar from "../Components/ShareAbleComponent/Navbar/Navbar";
 import Footer from "../Components/ShareAbleComponent/Footer/Footer";
@@ -21,15 +21,26 @@ import Footer from "../Components/ShareAbleComponent/Footer/Footer";
 const BlogDetail = () => {
   const [navfix, setNavfix] = useState(false);
 
-  function setFixed() {
-    if (window.scrollY >= 70) {
-      setNavfix(true);
-      //console.log(scrollY)
-    } else {
-      setNavfix(false);
+  useEffect(() => {
+    function setFixed() {
+      if (typeof window !== "undefined" && window.scrollY >= 70) {
+        setNavfix(true);
+        //console.log(scrollY)
+      } else {
+        setNavfix(false);
+      }
     }
-  }
-  window.addEventListener("scroll", setFixed);
+    
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", setFixed);
+    }
+  
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", setFixed);
+      }
+    };
+  }, []);
 
   return (
     <>
