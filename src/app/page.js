@@ -17,15 +17,26 @@ export default function Home() {
 
   const [navfix, setNavfix] = useState(false);
 
-  function setFixed() {
-    if (window.scrollY >= 70) {
-      setNavfix(true);
-      //console.log(scrollY)
-    } else {
-      setNavfix(false);
+  useEffect(() => {
+    function setFixed() {
+      if (typeof window !== "undefined" && window.scrollY >= 70) {
+        setNavfix(true);
+        //console.log(scrollY)
+      } else {
+        setNavfix(false);
+      }
     }
-  }
-  window.addEventListener("scroll", setFixed);
+    
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", setFixed);
+    }
+  
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", setFixed);
+      }
+    };
+  }, []);
 
   const [loadmore, setLoadMore] = useState(4);
   function handleLoadMore() {
