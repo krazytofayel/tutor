@@ -1,4 +1,4 @@
-'use client'
+
 
 import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextareaAutosize, Typography } from '@mui/material'
 import { Button } from 'flowbite-react'

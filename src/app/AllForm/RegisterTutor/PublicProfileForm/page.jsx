@@ -1,4 +1,4 @@
-'use client'
+
 
 import ImageUpload from '@/app/Components/ShareAbleComponent/Helper/ImageUpload/ImageUpload';
 import { Box, FormControl, FormControlLabel, FormHelperText, FormLabel, Input, Radio, RadioGroup, TextareaAutosize, Typography } from '@mui/material'
