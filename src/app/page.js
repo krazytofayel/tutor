@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import homebg3 from "../../public/assets/images/homepage/bgimg3.png";
 import homebg1 from "../../public/assets/images/homepage/Maskgroup.png";
