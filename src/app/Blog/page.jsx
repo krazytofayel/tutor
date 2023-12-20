@@ -51,7 +51,7 @@ const Blog = () => {
     }).filter(Boolean);
 
     console.log("Selected Subjects:", selectedSubjectsNames);
-  }, [selectedSubjects,ButtonData]);
+  }, [selectedSubjects]);
 
   const handleCheckboxChange = (id) => {
     setSelectedSubjects(prevSelected => {

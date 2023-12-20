@@ -56,7 +56,7 @@ const Resources = ()=>{
     }).filter(Boolean);
 
     console.log("Selected Subjects:", selectedSubjectsNames);
-  }, [selectedSubjects,ButtonData]);
+  }, [selectedSubjects]);
 
   const handleCheckboxChange = (id) => {
     setSelectedSubjects(prevSelected => {
@@ -123,7 +123,7 @@ const Resources = ()=>{
                 transition={{ duration: 0.5 }} className="text-2xl lg:text-4xl font-bold text-center text-cyan-700 py-5 ">Download the resources you need, see it here.</motion.h3>
               <motion.p initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }} className="max-w-lg text-center mx-auto">Find what's best to support your learning and improve your knowledge further. we have what you need here.</motion.p>
+                transition={{ duration: 0.5 }} className="max-w-lg text-center mx-auto">Find whats best to support your learning and improve your knowledge further. we have what you need here.</motion.p>
               <motion.div initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }} className="grid grid-cols-12 gap-4 xl:gap-10  p-2 mt-10">
