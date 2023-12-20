@@ -32,7 +32,9 @@ const ImageUpload = () => {
             <Image
               src={selectedImage}
               alt="Selected"
-              className="h-32 w-36 object-cover rounded-full "
+              className="h-38 w-36 object-cover rounded-full "
+              width={144}
+              height={128}
             />
           ) : (
             <div className="border border-dashed border-gray-500 mt-[150px] rounded-lg">

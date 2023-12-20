@@ -1,3 +1,6 @@
+'use client'
+
+import ImageUpload from '@/app/Components/ShareAbleComponent/Helper/ImageUpload/ImageUpload';
 import { Box, FormControl, FormControlLabel, FormHelperText, FormLabel, Input, Radio, RadioGroup, TextareaAutosize, Typography } from '@mui/material'
 import { Button } from 'flowbite-react'
 import React from 'react'
@@ -25,10 +28,19 @@ const PublicProfileForm = ({ handleNext, handleBack, activeStep, isStepOptional,
         <div>
 
           <p className='font-medium text-lg'>Public Profile</p>
-          <p className='text-sm mb-5 mt-2'>Now create your public profile which will be shown to prospective students on Learnmate.</p>
+          <p className='text-sm mb-5 mt-2'>Now create your public profile which will be shown to prospective students on tutor2u.</p>
         </div>
 
+        <div class="mb-5">
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">1. Upload Profile Picture*</label>
 
+          <ImageUpload/>
+         
+          <FormHelperText>
+
+          svg,img,pdf
+          </FormHelperText>
+        </div>
 
 
 
