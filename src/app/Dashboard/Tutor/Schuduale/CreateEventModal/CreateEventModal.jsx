@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { DatePicker, Input, Modal } from 'antd';
 const CreateEventModal = ({ showModal,visible,onOk,onCancel }) => {

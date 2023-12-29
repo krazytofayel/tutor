@@ -1,5 +1,5 @@
-'use client'
 
+'use client'
 import DashboardMainLayout from '@/app/Components/ShareAbleComponent/DashboardMainLayoutLogic/DashboardMainLayout';
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
