@@ -8,6 +8,16 @@ const CookieNotice = () => {
   const acceptCookies = () => {
     setShowCookieNotice(false);
     // Add logic to set cookies or save user preference (e.g., in local storage)
+    // Logic to save user login information as cookies
+    const userInfo = {
+      username: 'example_user',
+      email: 'user@example.com',
+      // Include other user information as needed
+    };
+    
+    // Save user information in cookies
+    document.cookie = `userInfo=${JSON.stringify(userInfo)}; expires=${new Date(Date.now() + 86400000).toUTCString()}; path=/`;
+
   };
 
   const declineCookies = () => {

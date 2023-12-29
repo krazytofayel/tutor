@@ -1,260 +1,90 @@
-'use client'
-import { SearchOutlined } from '@ant-design/icons';
-import React, { useRef, useState } from 'react';
-import Highlighter from 'react-highlight-words';
-import { Button, Input, Space, Table } from 'antd';
-const data = [
+import React, { useEffect, useState } from 'react';
+import qs from 'qs';
+import { Table } from 'antd';
+const columns = [
   {
-    "_id": "658a61eddda63b8dc18099c9",
-    "index": 0,
-    "isActive": false,
-    "balance": "$3,906.98",
-    "age": 34,
-    "progress": 36,
-    "SessionDetails": "2023-06-05T04:32:31 -06:00",
-    "name": "Day Franco",
-    "email": "dayfranco@buzzmaker.com",
-    "phone": "+1 (844) 558-2844",
-    "address": "363 Bushwick Court, Noxen, Alaska, 9302",
-    "LastInteraction": "2020-06-20T12:21:12 -06:00"
+    title: 'Name',
+    dataIndex: 'name',
+    sorter: true,
+    render: (name) => `${name.first} ${name.last}`,
+    width: '20%',
   },
   {
-    "_id": "658a61ed2f6e32ec080d322e",
-    "index": 1,
-    "isActive": true,
-    "balance": "$3,413.71",
-    "age": 31,
-    "progress": 37,
-    "SessionDetails": "2014-12-06T12:11:01 -06:00",
-    "name": "Long Whitaker",
-    "email": "longwhitaker@buzzmaker.com",
-    "phone": "+1 (831) 558-2577",
-    "address": "656 Oriental Boulevard, Tecolotito, West Virginia, 1350",
-    "LastInteraction": "2021-11-15T07:15:32 -06:00"
+    title: 'Gender',
+    dataIndex: 'gender',
+    filters: [
+      {
+        text: 'Male',
+        value: 'male',
+      },
+      {
+        text: 'Female',
+        value: 'female',
+      },
+    ],
+    width: '20%',
   },
   {
-    "_id": "658a61edf8801a1906962846",
-    "index": 2,
-    "isActive": true,
-    "balance": "$2,508.19",
-    "age": 32,
-    "progress": 34,
-    "SessionDetails": "2019-12-08T06:04:23 -06:00",
-    "name": "Blevins Cohen",
-    "email": "blevinscohen@buzzmaker.com",
-    "phone": "+1 (947) 467-2674",
-    "address": "943 Dumont Avenue, Florence, Federated States Of Micronesia, 591",
-    "LastInteraction": "2021-05-17T08:07:22 -06:00"
+    title: 'Email',
+    dataIndex: 'email',
   },
-  {
-    "_id": "658a61ed66b53d799def2985",
-    "index": 3,
-    "isActive": false,
-    "balance": "$3,127.34",
-    "age": 22,
-    "progress": 27,
-    "SessionDetails": "2019-12-17T04:11:28 -06:00",
-    "name": "Evangeline Romero",
-    "email": "evangelineromero@buzzmaker.com",
-    "phone": "+1 (921) 540-3472",
-    "address": "692 Channel Avenue, Freeburn, Montana, 3514",
-    "LastInteraction": "2017-06-28T11:32:36 -06:00"
-  },
-  {
-    "_id": "658a61eddba46f0bf5452dce",
-    "index": 4,
-    "isActive": false,
-    "balance": "$2,106.44",
-    "age": 29,
-    "progress": 20,
-    "SessionDetails": "2016-11-18T10:04:16 -06:00",
-    "name": "Joyce Villarreal",
-    "email": "joycevillarreal@buzzmaker.com",
-    "phone": "+1 (984) 595-3836",
-    "address": "372 Brighton Court, Mathews, Northern Mariana Islands, 4895",
-    "LastInteraction": "2019-11-10T10:56:02 -06:00"
-  },
-  {
-    "_id": "658a61ed8a9294d56d05bc6d",
-    "index": 5,
-    "isActive": true,
-    "balance": "$1,037.13",
-    "age": 27,
-    "progress": 21,
-    "SessionDetails": "2015-05-03T07:45:39 -06:00",
-    "name": "Araceli Mcmillan",
-    "email": "aracelimcmillan@buzzmaker.com",
-    "phone": "+1 (895) 516-2288",
-    "address": "922 Estate Road, Spelter, North Carolina, 4307",
-    "LastInteraction": "2020-05-27T10:26:20 -06:00"
-  }
-]
-const MyStudent = () => {
-  const [searchText, setSearchText] = useState('');
-  const [searchedColumn, setSearchedColumn] = useState('');
-  const searchInput = useRef(null);
-  const handleSearch = (selectedKeys, confirm, dataIndex) => {
-    confirm();
-    setSearchText(selectedKeys[0]);
-    setSearchedColumn(dataIndex);
-  };
-  const handleReset = (clearFilters) => {
-    clearFilters();
-    setSearchText('');
-  };
-  const getColumnSearchProps = (dataIndex) => ({
-    filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters, close }) => (
-      <div
-        style={{
-          padding: 8,
-        }}
-        onKeyDown={(e) => e.stopPropagation()}
-      >
-        <Input
-          ref={searchInput}
-          placeholder={`Search ${dataIndex}`}
-          value={selectedKeys[0]}
-          onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
-          onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
-          style={{
-            marginBottom: 8,
-            display: 'block',
-          }}
-        />
-        <Space>
-          <Button
-           
-            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
-            icon={<SearchOutlined />}
-            size="small"
-            style={{
-              width: 90,
-            }}
-          >
-            Search
-          </Button>
-          <Button
-            onClick={() => clearFilters && handleReset(clearFilters)}
-            size="small"
-            style={{
-              width: 90,
-            }}
-          >
-            Reset
-          </Button>
-          <Button
-            type="link"
-            size="small"
-            onClick={() => {
-              confirm({
-                closeDropdown: false,
-              });
-              setSearchText(selectedKeys[0]);
-              setSearchedColumn(dataIndex);
-            }}
-          >
-            Filter
-          </Button>
-          <Button
-            type="link"
-            size="small"
-            onClick={() => {
-              close();
-            }}
-          >
-            close
-          </Button>
-        </Space>
-      </div>
-    ),
-    filterIcon: (filtered) => (
-      <SearchOutlined
-        style={{
-          color: filtered ? '#1677ff' : undefined,
-        }}
-      />
-    ),
-    onFilter: (value, record) =>
-      record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
-    onFilterDropdownOpenChange: (visible) => {
-      if (visible) {
-        setTimeout(() => searchInput.current?.select(), 100);
-      }
+];
+const getRandomuserParams = (params) => ({
+  results: params.pagination?.pageSize,
+  page: params.pagination?.current,
+  ...params,
+});
+const Payment = () => {
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(false);
+  const [tableParams, setTableParams] = useState({
+    pagination: {
+      current: 1,
+      pageSize: 10,
     },
-    render: (text) =>
-      searchedColumn === dataIndex ? (
-        <Highlighter
-          highlightStyle={{
-            backgroundColor: '#ffc069',
-            padding: 0,
-          }}
-          searchWords={[searchText]}
-          autoEscape
-          textToHighlight={text ? text.toString() : ''}
-        />
-      ) : (
-        text
-      ),
   });
-  const columns = [
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-      
-      ...getColumnSearchProps('name'),
-    },
-    {
-      title: 'Subjects',
-      dataIndex: 'name',
-      key: 'name',
-      
-      ...getColumnSearchProps('name'),
-    },
-    {
-      title: 'Progress',
-      dataIndex: 'progress',
-      key: 'progress',
-      
-      ...getColumnSearchProps('progress'),
-    },
-    {
-      title: 'Session Details',
-      dataIndex: 'SessionDetails',
-      key: 'SessionDetails',
-     
-      ...getColumnSearchProps('SessionDetails'),
-    },
-    {
-      title: 'Last Interaction',
-      dataIndex: 'LastInteraction',
-      key: 'LastInteraction',
-     
-      ...getColumnSearchProps('LastInteraction'),
-      sorter: (a, b) => a.LastInteraction.length - b.LastInteraction.length,
-      sortDirections: ['descend', 'ascend'],
-      
-    },
-   
-    {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
-      
-      ...getColumnSearchProps('age'),
-      sorter: (a, b) => a.age - b.age,
-      sortDirections: ['descend', 'ascend'],
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-      ...getColumnSearchProps('address'),
-      sorter: (a, b) => a.address.length - b.address.length,
-      sortDirections: ['descend', 'ascend'],
-    },
-  ];
-  return <Table columns={columns} dataSource={data} />;
-};
-export default MyStudent;
+  const fetchData = () => {
+    setLoading(true);
+    fetch(`https://randomuser.me/api?${qs.stringify(getRandomuserParams(tableParams))}`)
+      .then((res) => res.json())
+      .then(({ results }) => {
+        setData(results);
+        setLoading(false);
+        setTableParams({
+          ...tableParams,
+          pagination: {
+            ...tableParams.pagination,
+            total: 200,
+            // 200 is mock data, you should read it from server
+            // total: data.totalCount,
+          },
+        });
+      });
+  };
+  useEffect(() => {
+    fetchData();
+  }, [JSON.stringify(tableParams)]);
+  const handleTableChange = (pagination, filters, sorter) => {
+    setTableParams({
+      pagination,
+      filters,
+      ...sorter,
+    });
 
+    // `dataSource` is useless since `pageSize` changed
+    if (pagination.pageSize !== tableParams.pagination?.pageSize) {
+      setData([]);
+    }
+  };
+  return (
+    <Table
+      columns={columns}
+      rowKey={(record) => record.login.uuid}
+      dataSource={data}
+      pagination={tableParams.pagination}
+      loading={loading}
+      onChange={handleTableChange}
+    />
+  );
+};
+export default Payment;

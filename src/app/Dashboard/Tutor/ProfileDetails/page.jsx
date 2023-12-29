@@ -6,6 +6,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import TutorProfileDetail from './TutorProfileDetail/TutorProfileDetail';
+import TutorExperienceAvailability from './TutorExperience-Availabality/TutorExperienceAvailability';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -51,20 +53,18 @@ export default function ProfileDetails() {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Profile " {...a11yProps(0)} />
+          <Tab label=" Experience & Availability" {...a11yProps(1)} />
+        
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        Item One
+        <TutorProfileDetail/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+       <TutorExperienceAvailability/>
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        Item Three
-      </CustomTabPanel>
+    
     </Box>
   );
 }

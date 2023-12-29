@@ -9,7 +9,7 @@ const Blogpagecard = ({ blogcardprop }) => {
       <div className=" w-auto  bg-white border border-gray-200 rounded-lg shadow mt-5">
         <div className="flex items-center space-x-4 p-2 ">
           <div className="flex-shrink-0">
-            <Image className="w-20 h-20 rounded" src={image} alt="Neil image" />
+            <Image className="w-20 h-20 rounded" src={image} width={500} height={500} alt="Neil image" />
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-sm font-bold text-gray-900  dark:text-white">
