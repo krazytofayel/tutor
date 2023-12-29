@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react';
 import qs from 'qs';
 import { Table } from 'antd';
