@@ -1,9 +1,17 @@
 'use client'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const CookieNotice = () => {
   const [showCookieNotice, setShowCookieNotice] = useState(true);
+
+  useEffect(() => {
+    // Check if running in the browser
+    if (typeof document !== 'undefined') {
+      const userAcceptedCookies = localStorage.getItem('userAcceptedCookies');
+      setShowCookieNotice(userAcceptedCookies !== 'true');
+    }
+  }, []);
 
   const acceptCookies = () => {
     setShowCookieNotice(false);
