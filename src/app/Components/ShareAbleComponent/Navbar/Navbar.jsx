@@ -26,7 +26,8 @@ const Navbar = () => {
       <div>
       <nav className="container mx-auto md:flex justify-between items-center text-black py-[18.5px] ">
                     <div className="p-2 md:p-0 lg:p-0 ">
-                        <Image src={logo} alt=" main logo" />
+                        <Link href='/'> <Image src={logo} alt=" main logo" /></Link>
+                       
                     </div>
 
                     <div onClick={() => setOpen(!open)} className="text-3xl absolute right-8 top-3 cursor-pointer md:hidden">

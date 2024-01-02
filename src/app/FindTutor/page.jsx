@@ -137,7 +137,7 @@ const FindTutor = () => {
           <div className="container mx-auto ">
             <div className="">
 
-              <h3 className="text-2xl lg:text-4xl font-bold text-center text-[#2c6777] py-5 ">154,3 Search Result in “English” Tutor</h3>
+              <h3 className="text-2xl border-y-2 w-6/12 mx-auto lg:text-4xl font-bold text-center text-[#2c6777] py-5 ">154,3 Search Result in “English” Tutor</h3>
               <div className="grid grid-cols-12 gap-5 lg:gap-12 p-2 mt-10">
                 <div className="col-span-12 md:col-span-8 lg:col-span-9 mb-6 lg:mb-0">
                   <form onSubmit={handleSubmit(onSubmit)}>

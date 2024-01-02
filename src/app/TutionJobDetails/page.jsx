@@ -4,72 +4,80 @@ import Badge from '../Components/ShareAbleComponent/Badge/page';
 import Footer from '../Components/ShareAbleComponent/Footer/Footer';
 import Navbar from '../Components/ShareAbleComponent/Navbar/Navbar';
 import { useEffect, useState } from 'react';
-
+import './style.css'
 const TutionJobDetails = () => {
-  
+
     const [navfix, setNavfix] = useState(false);
 
     useEffect(() => {
         function setFixed() {
-          if (typeof window !== "undefined" && window.scrollY >= 70) {
-            setNavfix(true);
-            //console.log(scrollY)
-          } else {
-            setNavfix(false);
-          }
+            if (typeof window !== "undefined" && window.scrollY >= 70) {
+                setNavfix(true);
+                //console.log(scrollY)
+            } else {
+                setNavfix(false);
+            }
         }
-        
+
         if (typeof window !== "undefined") {
-          window.addEventListener("scroll", setFixed);
+            window.addEventListener("scroll", setFixed);
         }
-      
+
         return () => {
-          if (typeof window !== "undefined") {
-            window.removeEventListener("scroll", setFixed);
-          }
+            if (typeof window !== "undefined") {
+                window.removeEventListener("scroll", setFixed);
+            }
         };
-      }, []);
-  
-
-  const { register, handleSubmit, errors } = useForm(); // initialize the hook
-
-  const onSubmitButton = (data) => {
-    console.log(data);
-};
+    }, []);
 
 
-  return (
-   <>
- <div
-        className={`z-20  ${
-          navfix
-            ? "fixed top-0  shadow-lg w-full  bg-white transition-all duration-300 ease-in-out "
-            : ""
-        }`}
-      >
-        <Navbar className="relative " />
-      </div>
+    const { register, handleSubmit, errors } = useForm(); // initialize the hook
 
-     {/* Tutor details top banner start */}
-     <section className="bg-[#2C6777] ">
+    const onSubmitButton = (data) => {
+        console.log(data);
+    };
+
+
+    const [glow, setGlow] = useState(false);
+
+    const handleClick = () => {
+        setGlow(true);
+        setTimeout(() => {
+            setGlow(false);
+        }, 300); // Adjust the duration of the glow effect as needed
+    };
+
+    return (
+        <>
+            <div
+                className={`z-20  ${navfix
+                    ? "fixed top-0  shadow-lg w-full  bg-white transition-all duration-300 ease-in-out "
+                    : ""
+                    }`}
+            >
+                <Navbar className="relative " />
+            </div>
+
+            {/* Tutor details top banner start */}
+            <section className="bg-[#2C6777] ">
                 <div className="xl:w-[55rem] lg:w-[38rem] mx-auto py-10 text-center">
                     <h1 className="text-white text-[35px] xl:text-[50px] lg:text-[36px] md:text-[27px] title-font font-bold mb-4 ">
-                        Available Tuition Jobs
+                        Tuition Jobs Details
                     </h1>
                     <p className="leading-relaxed xl:text-[30px] text-xl text-white mb-4 lg:font-medium  md:font-semibold font-medium  mx-4">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 
                     </p>
                 </div>
 
             </section>
 
-          {/* Tutor details top banner end */}
+            {/* Tutor details top banner end */}
 
 
-             {/* Available tution job form  start */}
+            {/* Available tution job form  start */}
 
-             <section className="Contact_Us_Middle ">
+            <section className="Contact_Us_Middle ">
                 <div className="bg-[#DCECFA] lg:p-16">
                     <div className="container mx-auto">
                         <div className="grid grid-cols-12 gap-5 lg:gap-12 p-2">
@@ -184,7 +192,7 @@ const TutionJobDetails = () => {
                                                     </select>
 
                                                 </div> */}
-                                                 <div className="mb-2">
+                                                <div className="mb-2">
                                                     <div className="mb-2">
                                                         <label className="block mb-2 text-sm font-medium text-gray-900 ">Salary Range:</label>
                                                         <input type="text" id="mobile-number" className="w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg " placeholder="Enter your detail number" required
@@ -215,7 +223,22 @@ const TutionJobDetails = () => {
 
                                                     {...register('detail-address')}
                                                 />
-                                            </div>                                         
+                                            </div>
+
+                                            <div>
+
+
+                                                <button
+                                                    type='submit'
+                                                    className={`border rounded text-white bg-[#2c6777] px-2 py-1 text-md ${glow ? 'glow' : ''}`}
+                                                    onClick={handleClick}
+                                                >
+                                                    Apply Now
+                                                </button>
+
+
+
+                                            </div>
 
                                         </div>
                                     </div>
@@ -256,14 +279,14 @@ const TutionJobDetails = () => {
 
             </section>
             {/* Available tution job form end    */}
-{/* mixin badge start */}
-            <Badge title={'Create Tutor2u account now'} body_text={'Join us and start your journey towards excellence.'} btn_text={'Request A Tutor'}/>
-   {/* mixin badge end */}
-   <section className="">
+            {/* mixin badge start */}
+            <Badge title={'Create Tutor2u account now'} body_text={'Join us and start your journey towards excellence.'} btn_text={'Request A Tutor'} />
+            {/* mixin badge end */}
+            <section className="">
                 <Footer />
             </section>
-   </>
-  )
+        </>
+    )
 }
 
 export default TutionJobDetails

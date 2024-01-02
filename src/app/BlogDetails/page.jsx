@@ -55,7 +55,7 @@ const BlogDetail = () => {
       </div>
 
     <section className="bg-[#F0F8FF] py-20">
-                <div class="container px-5 pt-24 mx-auto">
+                <div class="container px-5 pt-4 mx-auto">
                     <div class="flex flex-wrap w-full mb-5 flex-col items-center text-center">
                         <h1 class=" lg:text-5xl lg:text-[40px] md:text-4xl  text-[24px] font-bold title-font mb-2 text-[#2c6777]">
                             Welcome to Our Blog
