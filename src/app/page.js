@@ -26,11 +26,11 @@ export default function Home() {
         setNavfix(false);
       }
     }
-    
+
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", setFixed);
     }
-  
+
     return () => {
       if (typeof window !== "undefined") {
         window.removeEventListener("scroll", setFixed);
@@ -43,17 +43,18 @@ export default function Home() {
     setLoadMore((prevNum) => prevNum + 3);
   }
   return (
-<>
-<div
-        className={`z-20  ${
-          navfix
-            ? "fixed top-0  shadow-lg w-full  bg-white transition-all duration-300 ease-in-out "
-            : ""
-        }`}
+    <>
+      <div
+        className={`z-20  ${navfix
+          ? "fixed top-0  shadow-lg w-full  bg-white transition-all duration-300 ease-in-out "
+          : ""
+          }`}
       >
         <Navbar className="relative " />
       </div>
-<section className="h-full w-full place-items-center bg-[#ffffff]   relative py-14 lg:mb-20 ">
+
+      {/* home section main div start */}
+      <section className="h-full w-full place-items-center bg-[#ffffff]   relative py-14 lg:mb-20 ">
         <div className="container mx-auto grid items-center lg:grid-cols-2">
           <div className="text-center lg:text-left pt-10">
             <div className="mb-8 inline-flex items-center">
@@ -69,7 +70,7 @@ export default function Home() {
               <span className="text-[#2c6777]">and manage Best tutors.</span>
             </h1>
             <p className="block antialiased  text-xl font-normal leading-relaxed text-blue-gray-900 lg:pr-32">
-            Skilled and Emotionally Intelligent Educators that will make learning exciting and engaging.
+              Skilled and Emotionally Intelligent Educators that will make learning exciting and engaging.
             </p>
             <div className="mt-2 ">
               <form className="max-w-xl mt-10 p-2 md:p-0 lg:p-0">
@@ -112,7 +113,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-
+        {/* right-side image content */}
         <div className="hidden lg:flex">
           <Image
             src={homebg1}
@@ -121,6 +122,7 @@ export default function Home() {
           />
         </div>
       </section>
+      {/* home section main div end */}
 
       <section className="Home_Secound_Banner ">
         <div className=" mx-auto container  py-10 lg:py-28 md:py-20  ">
@@ -147,7 +149,7 @@ export default function Home() {
       </section>
 
       <section className="Home_Third_Banner bg-[#dcecfa]">
-        <div className="container  py-10 lg:py-28 md:py-14 md:p-2  mx-auto ">
+        <div className="container  py-10 lg:py-24 md:py-14 md:p-2  mx-auto ">
           <div className=" mx-auto flex flex-wrap  md:flex-row flex-col items-center">
             <div className="xl:w-4/6 lg:w-2/4 md:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0 md:pr-5">
               <div className="xl:w-[45rem] text-center p-1 md:p-0 md:text-start">
@@ -163,7 +165,7 @@ export default function Home() {
               </div>
             </div>
             <div className=" xl:w-2/6 lg:w-2/4  md:w-1/2 w-full lg:h-auto h-auto object-cover object-center  flex justify-center md:justify-end">
-              <Image alt="Top-Banner-Side-Image" width={'500'}  height={'500'} className="  " src={'https://learnmate.com.au/wp-content/uploads/2023/10/penny-graphics.svg'} />
+              <Image alt="Top-Banner-Side-Image" width={'500'} height={'500'} className="  " src={'https://learnmate.com.au/wp-content/uploads/2023/10/penny-graphics.svg'} />
             </div>
           </div>
         </div>
@@ -171,7 +173,7 @@ export default function Home() {
 
 
       {/* subject Card start  */}
-      <section className="div3-Section w-full container mx-auto ">
+      <section className="Home_Forth_Section w-full container mx-auto ">
         <div className=" mt-16 mb-16">
           <div>
             <div className=" p-5 md:p-0  ">
@@ -239,6 +241,6 @@ export default function Home() {
       </section>
 
 
-</>
+    </>
   )
 }
