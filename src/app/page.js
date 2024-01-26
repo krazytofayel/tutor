@@ -55,8 +55,8 @@ export default function Home() {
 
       {/* home section main div start */}
       <section className="h-full w-full place-items-center bg-[#ffffff]   relative py-14 lg:mb-20 ">
-        <div className="container mx-auto grid items-center lg:grid-cols-2">
-          <div className="text-center lg:text-left pt-10">
+        <div className="container mx-auto grid items-center xl:grid-cols-2">
+          <div className="text-center xl:text-left pt-10">
             <div className="mb-8 inline-flex items-center">
               <p className="block antialiased font-sans text-sm leading-normal mr-3 py-0.5 px-3 font-bold text-dark uppercase border-r border-dark text-[#9fa8ab]">
                 New
@@ -65,15 +65,15 @@ export default function Home() {
                 want to find tutors.
               </p>
             </div>
-            <h1 className="block antialiased tracking-normal text-[#2c6777]  text-5xl text-blue-gray-900 mb-8 lg:mr-32 leading-tight font-black">
+            <h1 className="block antialiased tracking-normal text-[#2c6777]  text-5xl text-blue-gray-900 mb-8  leading-tight font-black">
               We help you find{" "}
               <span className="text-[#2c6777]">and manage Best tutors.</span>
             </h1>
-            <p className="block antialiased  text-xl font-normal leading-relaxed text-blue-gray-900 lg:pr-32">
+            <p className="block antialiased  text-xl  font-normal leading-relaxed text-blue-gray-900 lg:pr-32">
               Skilled and Emotionally Intelligent Educators that will make learning exciting and engaging.
             </p>
             <div className="mt-2 ">
-              <form className="max-w-xl mt-10 p-2 md:p-0 lg:p-0">
+              <form className="max-w-xl mt-10 p-2 md:p-0 lg:p-0  ">
                 <label className=" text-sm font-medium text-gray-900 sr-only ">
                   Search
                 </label>
@@ -114,7 +114,7 @@ export default function Home() {
           </div>
         </div>
         {/* right-side image content */}
-        <div className="hidden lg:flex">
+        <div className="hidden xl:flex ">
           <Image
             src={homebg1}
             alt="components"

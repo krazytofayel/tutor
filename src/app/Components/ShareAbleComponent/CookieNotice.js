@@ -13,6 +13,13 @@ const CookieNotice = () => {
     }
   }, []);
 
+  
+  useEffect(() => {
+    // Update local storage when showCookieNotice changes
+    localStorage.setItem('userAcceptedCookies', !showCookieNotice);
+  }, [showCookieNotice]);
+
+
   const acceptCookies = () => {
     setShowCookieNotice(false);
     // Add logic to set cookies or save user preference (e.g., in local storage)

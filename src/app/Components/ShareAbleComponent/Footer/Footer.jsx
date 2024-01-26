@@ -51,9 +51,9 @@ const Footer=()=>{
 									<a className="hover:underline" href="">
 										<li>FAQ</li>
 									</a>
-									<a className="hover:underline" href="">
-										<li>Career</li>
-									</a>
+									<Link href='/ContactUs' class="hover:underline" >
+										<li>Contact Us </li>
+									</Link>
 
 									<a className="hover:underline" href="">
 										<li>Privacy Policy</li>
@@ -68,7 +68,7 @@ const Footer=()=>{
 						</div>
 
 						<div className="lg:w-2/6 md:w-1/2 w-full px-6">
-							<Link href='/contact_us' className='font-bold text-lg '>Contact Us</Link>
+							<Link href='/ContactUs' className='font-bold text-lg '>Contact Us</Link>
 
 							<nav className="list-none mt-3 mb-10">
 								<ul className="flex flex-col gap-[10px] text-[#FFFFFF]">

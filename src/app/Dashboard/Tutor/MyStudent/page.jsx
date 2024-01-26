@@ -35,6 +35,8 @@ const getRandomuserParams = (params) => ({
   page: params.pagination?.current,
   ...params,
 });
+
+
 const Payment = () => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
@@ -71,12 +73,25 @@ const Payment = () => {
       filters,
       ...sorter,
     });
-
+  
     // `dataSource` is useless since `pageSize` changed
     if (pagination.pageSize !== tableParams.pagination?.pageSize) {
       setData([]);
     }
+  
+    if (sorter && sorter.field === 'gender') {
+      const order = sorter.order === 'descend' ? -1 : 1;
+      const sortedData = data.slice().sort((a, b) => {
+        const genderA = a.gender.toLowerCase();
+        const genderB = b.gender.toLowerCase();
+  
+        return order * genderA.localeCompare(genderB);
+      });
+  
+      setData(sortedData);
+    }
   };
+  
   return (
     <Table
       columns={columns}

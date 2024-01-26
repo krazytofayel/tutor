@@ -73,15 +73,15 @@ const SignUp = () => {
 
                         <form action="" onSubmit={handleSubmit(onSubmit)} class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
                         <label className="block text-md font-medium text-[#2C6777] text-start ml-2">
-                                I am signing up as a
+                                I am signing up as a,
                             </label>
                             <div className="grid grid-cols-12 gap-5">
                                 <div className="col-span-12 md:col-span-6 lg:col-span-6 pb-2 pt-4">
                                     <button
                                         className={`uppercase block w-full p-4 text-lg font-bold rounded-lg ${activeButton === 'tutor'
                                             ? 'bg-[#2C6777] text-white'
-                                            : 'bg-white text-black'
-                                            } hover:bg-[#2C6777]`}
+                                            : 'bg-white  text-[#69797a]'
+                                            } hover:bg-[#2C6777] hover:text-white`}
                                         onClick={() => handleButtonClick('tutor')}
                                     >
                                         Tutor
@@ -89,8 +89,8 @@ const SignUp = () => {
                                 </div>
                                 <div className="col-span-12 md:col-span-6 lg:col-span-6 pb-2 pt-4">
                                     <button
-                                        className={`uppercase block w-full p-4 text-lg font-bold rounded-lg ${activeButton === 'parent' ? 'bg-[#2C6777] text-white' : 'bg-white text-black'
-                                            } hover:bg-[#2C6777]`}
+                                        className={`uppercase block w-full p-4 text-lg font-bold rounded-lg ${activeButton === 'parent' ? 'bg-[#2C6777] text-white' : 'bg-white text-[#69797a]'
+                                            } hover:bg-[#2C6777] hover:text-white`}
                                         onClick={() => handleButtonClick('parent')}
                                     >
                                         Parent/Student
@@ -98,11 +98,11 @@ const SignUp = () => {
                                 </div>
                             </div>
 
-                            <div className="grid xl:grid-cols-2  lg:grid-cols-1  md:grid-cols-2 md:gap-6">
+                            <div className="grid xl:grid-cols-2  lg:grid-cols-1  md:grid-cols-2 md:gap-6 mt-2">
 
 
-                                <div className="mb-2">
-                                    <div className="mb-2">
+                                <div className="">
+                                    <div className="">
                                         <label className="block mb-2 text-lg font-bold text-[#2C6777] text-start ml-2 ">First Name</label>
                                         <input
                                             type="text"
@@ -129,7 +129,7 @@ const SignUp = () => {
                                 </div>
 
                             </div>
-                            <div className="pb-2 pt-4">
+                            <div className="pb-2 pt-2">
                                 <label className="block mb-2 text-lg font-bold text-[#2C6777] text-start ml-2 ">Email</label>
                                 <input
                                     type="email"
@@ -140,7 +140,7 @@ const SignUp = () => {
                                 />
                                 {errors.email && <span className="text-red-500">Email is required</span>}
                             </div>
-                            <div className="pb-2 pt-4">
+                            <div className="pb-2 pt-2">
                                 <label className="block mb-2 text-lg font-bold text-[#2C6777] text-start ml-2">
                                     Password
                                 </label>
@@ -167,7 +167,7 @@ const SignUp = () => {
 
                            
 
-                            <div className="  lg:mt-0 mt-2 flex items-start   w-full ">
+                            <div className="  lg:mt-0 mt-2 flex justify-start items-center   w-full ">
                                 <input
                                     type="checkbox"
                                     value=""
@@ -184,7 +184,7 @@ const SignUp = () => {
                                     .
                                 </label>
                             </div>
-                            <div className="pb-2 pt-4">
+                            <div className="pb-2 pt-5">
                                 <button
                                     type="submit"
                                     className={`uppercase block w-full p-4 text-lg text-white font-bold rounded-lg bg-[#2C6777] hover:bg-[#3f98b1] ${!isValid ? 'cursor-not-allowed opacity-50' : ''

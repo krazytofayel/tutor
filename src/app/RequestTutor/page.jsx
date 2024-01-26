@@ -259,11 +259,11 @@ const RequestTutor = () => {
                         <textarea id="message" rows="4" className="w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg" placeholder="Additional details"></textarea>
 
                       </div>
-                      <div className=" flex gap-2 flex-wrap justify-start">
+                      <div className=" flex gap-2 flex-wrap justify-start items-center">
                         <div className="  lg:text-left ">
                           <button type="submit" className=" text-white bg-[#2c6777] hover:bg-[#2c6777] focus:ring-4   font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Request Tutor</button>
                         </div>
-                        <div className=" flex gap-2 ">
+                        <div className=" flex gap-2 items-center ">
                           <input type="checkbox" name="" className=" accent-[#2c6777]" id="" />
                           <p className="  lg:text-left text-center my-2">Apply now if you need tution for your study</p>
 
